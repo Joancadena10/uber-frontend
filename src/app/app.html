@@ -1,0 +1,41 @@
+@if (ruta() !== '/login') {
+  <header class="barra">
+    <a class="marca" routerLink="/login">
+      UBER<span>APP</span>
+    </a>
+
+    <nav>
+      @if (!sesion()) {
+        <a routerLink="/cliente"
+           routerLinkActive="activo">Cliente</a>
+
+        <a routerLink="/conductor"
+           routerLinkActive="activo">Conductor</a>
+
+        <a routerLink="/administrador"
+           routerLinkActive="activo">Administrador</a>
+
+        <a routerLink="/login">Ingresar</a>
+      } @else {
+        <span class="usuario">
+          {{ nombre() }} · {{ rol() }}
+        </span>
+
+        <button class="salir" (click)="cerrarSesion()">
+          Cerrar sesión
+        </button>
+      }
+    </nav>
+  </header>
+
+  @if (!sesion()) {
+    <div class="aviso-demo">
+      VISTA PREVIA — Estas pantallas no representan
+      una sesión autenticada ni muestran datos reales.
+    </div>
+  }
+}
+
+<main [class.contenido]="ruta() !== '/login'">
+  <router-outlet></router-outlet>
+</main>

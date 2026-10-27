@@ -1,0 +1,80 @@
+.barra {
+  background: #111;
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.marca {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.marca span {
+  color: #74c7ff;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  padding: 11px 16px;
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+}
+
+nav a:hover,
+nav a.activo {
+  background: #333;
+}
+
+.usuario {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.salir {
+  background: white;
+  color: #111;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.aviso-demo {
+  background: #fff3d6;
+  color: #765000;
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+}
+
+.contenido {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 24px;
+}
+
+@media (max-width: 650px) {
+  .barra {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+}

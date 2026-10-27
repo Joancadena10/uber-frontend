@@ -1,0 +1,44 @@
+<div class="panel">
+
+  <h2>Panel de Cliente</h2>
+  <p>Bienvenido a la plataforma Uber</p>
+
+  <div class="tarjetas">
+    <div class="tarjeta">
+      <h3>Solicitar viaje</h3>
+      <p>Seleccionar origen y destino</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>Viaje activo</h3>
+      <p>Consultar estado del servicio</p>
+    </div>
+
+    <div class="tarjeta">
+      <h3>Historial</h3>
+      <p>Consultar viajes realizados</p>
+    </div>
+  </div>
+
+  <div class="tarjeta" style="margin-top: 25px;">
+
+    <h3>Tarifas del servicio</h3>
+
+    <button (click)="consultarTarifa()" [disabled]="cargando">
+      {{ cargando ? 'Consultando...' : 'Actualizar tarifas' }}
+    </button>
+
+    @if (tarifa) {
+      <p>Nombre: {{ tarifa.name }}</p>
+      <p>Precio base: {{ tarifa.base_fare | currency:'COP' }}</p>
+      <p>Precio por km: {{ tarifa.price_per_km | currency:'COP' }}</p>
+      <p>Tarifa mínima: {{ tarifa.minimum_fare | currency:'COP' }}</p>
+    }
+
+    @if (error) {
+      <p style="color: red;">{{ error }}</p>
+    }
+
+  </div>
+
+</div>
